@@ -36,9 +36,9 @@ public class MessageServiceImp implements MessageService{
 		if (message == null) {
 			m.setId(0);
 			System.out.println(emailVerifier.isDeliverable(m.getEmail()));
-			 if (!emailVerifier.isDeliverable(m.getEmail())) {
-				 throw new IllegalArgumentException("Email looks invalid/undeliverable");
-			 }
+//			 if (!emailVerifier.isDeliverable(m.getEmail())) {
+//				 throw new IllegalArgumentException("Email looks invalid/undeliverable");
+//			 }
 			return messageDAO.save(m);
 		}
 		
