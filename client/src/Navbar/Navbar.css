@@ -1,0 +1,23 @@
+.navbar {
+    background-color: #24273A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-img {
+    display: flex;
+    width: 10rem;
+    height: auto;
+}
+
+.navbar-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-item {
+    display: flex;
+    padding: 1.5rem;
+    color: #CAD3F5;
+}

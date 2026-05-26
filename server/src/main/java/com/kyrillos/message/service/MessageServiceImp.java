@@ -14,12 +14,10 @@ import jakarta.transaction.Transactional;
 public class MessageServiceImp implements MessageService{
 	
 	private MessageDAO messageDAO;
-	private EmailVerifierService emailVerifier;
 	
 	@Autowired
-	public MessageServiceImp(MessageDAO messageDAO, EmailVerifierService emailVerifier) {
+	public MessageServiceImp(MessageDAO messageDAO) {
 		this.messageDAO = messageDAO;
-		this.emailVerifier = emailVerifier;
 	}
 
 	@Override
@@ -30,21 +28,6 @@ public class MessageServiceImp implements MessageService{
 	@Override
 	@Transactional
 	public Message save(Message m) {
-		Message message = findByEmail(m.getEmail());
-		System.out.println(message);
-		
-		if (message == null) {
-			m.setId(0);
-			System.out.println(emailVerifier.isDeliverable(m.getEmail()));
-//			 if (!emailVerifier.isDeliverable(m.getEmail())) {
-//				 throw new IllegalArgumentException("Email looks invalid/undeliverable");
-//			 }
-			return messageDAO.save(m);
-		}
-		
-		m.setId(message.getId());
-		
-		System.out.println(m);
 		
 		return messageDAO.save(m);
 	}
