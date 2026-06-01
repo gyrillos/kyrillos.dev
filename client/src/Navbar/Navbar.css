@@ -7,8 +7,10 @@
 
 .navbar-img {
     display: flex;
-    width: 10rem;
+    width: 5rem;
     height: auto;
+    background-color: #24273A;
+    padding-left: 2rem;
 }
 
 .navbar-list {
@@ -20,4 +22,10 @@
     display: flex;
     padding: 1.5rem;
     color: #CAD3F5;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.navbar-item:hover {
+    color: #F5A97F;
 }

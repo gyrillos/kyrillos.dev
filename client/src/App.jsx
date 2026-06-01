@@ -1,12 +1,21 @@
 import { useState } from 'react';
 import Navbar from "./Navbar/Navbar";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+
+import Home from "./Home/Home"
+import About from './About/About';
+import Projects from './Projects/Projects';
 
 function App() {
 
   return (
-    <>
-      <Navbar></Navbar>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/about" element={<About/>}></Route>
+        <Route path="/projects" element={<Projects/>}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
