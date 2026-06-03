@@ -1,0 +1,6 @@
+.home {
+    background-color: #24273A;
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+}
