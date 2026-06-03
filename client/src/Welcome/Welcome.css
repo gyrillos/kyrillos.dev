@@ -1,0 +1,14 @@
+.Welcome {
+    padding-left: 29rem;
+    padding-top: 6rem;
+    display: flex;
+}
+
+.Header {
+    color: #e4e9ff;
+    font-size: 2.8rem;
+}
+
+.Header-emphasis {
+    color: #F5A97F;
+}
