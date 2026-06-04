@@ -1,9 +1,9 @@
 import "./featured.css"
 
-function featured() {
+function Featured() {
     return (
         <div className="Featured"></div>
     );
 }
 
-export default featured;
+export default Featured;

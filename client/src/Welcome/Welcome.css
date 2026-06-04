@@ -2,6 +2,8 @@
     padding-left: 29rem;
     padding-top: 6rem;
     display: flex;
+    flex-direction: column;
+    font-family: "Space Grotesk", sans-serif;
 }
 
 .Header {
@@ -11,4 +13,32 @@
 
 .Header-emphasis {
     color: #F5A97F;
+}
+
+.Summary {
+    color: #CAD3F5;
+    font-size: 1.3rem;
+}
+
+.Header-emphasis-link {
+    color: #F5A97F;
+    
+   display: inline-block;
+  padding-bottom: 1px;
+
+  background-image: repeating-linear-gradient(
+    to right,
+    #F5A97F 0 10px,
+    transparent 10px 22px
+  );
+  background-repeat: repeat-x;
+  background-size: 100% 3px;
+  background-position: left bottom;
+  transition: 0.3s ease;
+}
+
+.Header-emphasis-link:Hover {
+    cursor: pointer;
+    color: #24273A;
+    background-color: #F5A97F;
 }
