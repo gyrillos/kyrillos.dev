@@ -1,8 +1,9 @@
 import "./Welcome.css"
-import {FaGithub, FaLinkedin} from "react-icons/fa";
+import {FaGithub, FaLinkedin, FaArrowRight} from "react-icons/fa";
 
 function Welcome() {
     return(
+        <>
         <div className="Welcome">
             <h1 className="Header">Hello! My Name is <strong className="Header-emphasis">Kyrillos</strong></h1>
             <p className="Summary">I'm a <strong className="Header-emphasis">Software Engineering</strong> new grad from <strong className="Header-emphasis-link">Christopher Newport University</strong>. At my time at <br></br>
@@ -11,8 +12,9 @@ function Welcome() {
                 the project I created in college. Seeing the real life implications of my work is what keeps<br></br> 
                 me building. 
             </p>
-            <div className="Socials"><FaGithub/></div>
+            <div className="Socials"><div className="Social"><FaGithub/> Github</div> | <div className="Social"><FaLinkedin/> LinkedIn </div> | <div className="Social">More About Me<FaArrowRight className="Arrow"/></div></div>
         </div>
+        </>
     );
 }
 

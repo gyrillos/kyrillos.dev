@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     font-family: "Space Grotesk", sans-serif;
+    color: #e4e9ff;
 }
 
 .Header {
@@ -41,4 +42,28 @@
     cursor: pointer;
     color: #24273A;
     background-color: #F5A97F;
+}
+
+.Socials {
+    display: flex;
+    flex-direction: row;
+}
+
+.Social {
+    cursor: pointer;
+    padding-left: .25rem;
+    padding-right: .25rem;
+}
+
+.Social:hover {
+    color: #F5A97F;
+}
+
+.Arrow {
+    padding-left: .25rem;
+    transition: transform 0.9s ease;
+}
+
+.Social:Hover .Arrow{
+    padding-left: .5rem;
 }
