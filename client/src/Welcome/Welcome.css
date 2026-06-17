@@ -61,7 +61,7 @@
 
 .Arrow {
     padding-left: .25rem;
-    transition: transform 0.9s ease;
+    transition: transform 0.001s ease;
 }
 
 .Social:Hover .Arrow{
