@@ -76,6 +76,7 @@ public class GithubRestController {
             String fullName = (String) repo.get("full_name");
 
             List<String> techStack = getLanguages(fullName);
+            List<String> commits = getGithubCommits(fullName);
 
             Github existingProject = githubservice.findByName(name);
 
@@ -90,6 +91,7 @@ public class GithubRestController {
             github.setName(name);
             github.setDiscritpion(description);
             github.setTechStack(techStack);
+            github.setCommits(commits);
 
             githubservice.save(github);
         }
@@ -126,10 +128,56 @@ public class GithubRestController {
     }
 	
 	
-	@GetMapping("/commits")
-	private List<String> getCommits() {
-		return githubservice.allCommits();
+	private List<String> getGithubCommits(String fullName) {
+	    HttpHeaders headers = new HttpHeaders();
+
+	    headers.set("Accept", "application/vnd.github+json");
+	    headers.set("X-GitHub-Api-Version", "2022-11-28");
+
+	    headers.setBearerAuth(githubToken.trim());
+
+	    HttpEntity<Void> buildRequest = new HttpEntity<>(headers);
+
+	    String url = "https://api.github.com/repos/" + fullName + "/commits?per_page=5";
+
+	    ResponseEntity<List> response = restTemplate.exchange(
+	            url,
+	            HttpMethod.GET,
+	            buildRequest,
+	            List.class
+	    );
+
+	    List<Map<String, Object>> commits = response.getBody();
+
+	    if (commits == null) {
+	        return List.of();
+	    }
+
+	    List<String> commitMessages = new ArrayList<>();
+
+	    for (Map<String, Object> commitData : commits) {
+	        Map<String, Object> commit = (Map<String, Object>) commitData.get("commit");
+
+	        if (commit != null) {
+	            String message = (String) commit.get("message");
+	            
+	            Map<String, Object> author = (Map<String, Object>) commit.get("author");
+
+	            String date = null;
+	            if (author != null) {
+	                date = (String) author.get("date");
+	            }
+	            
+	            
+	            if (message != null && date != null) {
+	                commitMessages.add(message + " | " + date);
+	            }
+	        }
+	    }
+
+	    return commitMessages;
 	}
+	
 	
 	@GetMapping("/projects")
 	private List<Github> getProjects() {

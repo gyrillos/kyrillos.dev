@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import Welcome from "../Welcome/Welcome";
 import Featured from "../Featured/Featured";
 import Contact from "../Contact/Contact";
+import Commits from "../Commits/Commits";
 
 function Home() {
     return (
@@ -11,6 +12,7 @@ function Home() {
             <Welcome></Welcome>
             <Featured></Featured>
             <Contact></Contact>
+            <Commits></Commits>
         </div>
     );
 }
