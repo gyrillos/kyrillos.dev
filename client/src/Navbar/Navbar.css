@@ -13,11 +13,16 @@
     height: auto;
     background-color: #24273A;
     padding-left: 2rem;
+    cursor: pointer;
 }
 
 .navbar-list {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0 1rem 0 0;
+    list-style: none;
 }
 
 .navbar-item {
@@ -30,4 +35,30 @@
 
 .navbar-item:hover {
     color: #F5A97F;
+}
+
+.navbar-resume-link {
+    color: inherit;
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .navbar-img {
+        width: 4rem;
+        padding-left: 1rem;
+    }
+
+    .navbar-list {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        padding-right: .5rem;
+    }
+
+    .navbar-item {
+        padding: 1rem .75rem;
+    }
 }

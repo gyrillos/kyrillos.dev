@@ -1,0 +1,76 @@
+.Commits {
+    width: min(72rem, calc(100% - 4rem));
+    margin: 6rem auto 0;
+    padding-bottom: 4rem;
+    color: #CAD3F5;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.Commits-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.Commits-label {
+    margin: 0 0 .5rem;
+    color: #F5A97F;
+    font-weight: 700;
+}
+
+.Commits h2 {
+    margin: 0;
+    color: #e4e9ff;
+    font-size: 2rem;
+}
+
+.Commits-list {
+    display: grid;
+    gap: .75rem;
+}
+
+.Commit {
+    border: 1px solid rgba(202, 211, 245, .16);
+    background-color: rgba(54, 58, 79, .44);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Commit h3 {
+    margin: 0;
+    color: #e4e9ff;
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+.Commit p {
+    margin: .35rem 0 0;
+}
+
+.Commit time {
+    color: #F5A97F;
+    white-space: nowrap;
+}
+
+.Commits-status {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .Commits {
+        width: min(100% - 2rem, 72rem);
+        margin-top: 4rem;
+    }
+
+    .Commits-heading,
+    .Commit {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

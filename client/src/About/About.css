@@ -1,0 +1,66 @@
+.about {
+    min-height: 100vh;
+    background-color: #24273A;
+}
+
+.about-content {
+    padding-bottom: 4rem;
+}
+
+.about-intro {
+    width: min(72rem, calc(100% - 4rem));
+    margin: 4rem auto 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(16rem, .8fr);
+    gap: 2.5rem;
+    align-items: center;
+    color: #CAD3F5;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.about-label {
+    margin: 0 0 .75rem;
+    color: #F5A97F;
+    font-weight: 700;
+}
+
+.about h1 {
+    margin: 0;
+    color: #e4e9ff;
+    font-size: 2.5rem;
+    line-height: 1.15;
+}
+
+.about-text {
+    margin-top: 1.25rem;
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.about-emphasis {
+    color: #F5A97F;
+}
+
+.about-photo {
+    width: 100%;
+    max-height: 32rem;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(202, 211, 245, .16);
+}
+
+@media (max-width: 850px) {
+    .about-intro {
+        width: min(100% - 2rem, 72rem);
+        grid-template-columns: 1fr;
+        margin-top: 3rem;
+    }
+
+    .about h1 {
+        font-size: 2rem;
+    }
+
+    .about-photo {
+        max-height: 26rem;
+    }
+}

@@ -1,6 +1,7 @@
 .Welcome {
-    padding-left: 29rem;
+    padding-left: clamp(2rem, 24vw, 29rem);
     padding-top: 6rem;
+    padding-right: 2rem;
     display: flex;
     flex-direction: column;
     font-family: "Space Grotesk", sans-serif;
@@ -19,6 +20,7 @@
 .Summary {
     color: #CAD3F5;
     font-size: 1.3rem;
+    line-height: 1.55;
 }
 
 .Header-emphasis-link {
@@ -47,12 +49,19 @@
 .Socials {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .35rem;
+    color: #CAD3F5;
 }
 
 .Social {
     cursor: pointer;
     padding-left: .25rem;
     padding-right: .25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
 }
 
 .Social:hover {
@@ -66,4 +75,22 @@
 
 .Social:Hover .Arrow{
     padding-left: .5rem;
+}
+
+@media (max-width: 800px) {
+    .Welcome {
+        padding-top: 4rem;
+    }
+
+    .Header {
+        font-size: 2.2rem;
+    }
+
+    .Summary {
+        font-size: 1.05rem;
+    }
+
+    .Summary br {
+        display: none;
+    }
 }

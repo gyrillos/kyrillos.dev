@@ -1,0 +1,121 @@
+.Contact {
+    width: min(72rem, calc(100% - 4rem));
+    margin: 6rem auto 0;
+    display: grid;
+    grid-template-columns: minmax(0, .85fr) minmax(20rem, 1.15fr);
+    gap: 2rem;
+    color: #CAD3F5;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.Contact-heading {
+    padding-top: .5rem;
+}
+
+.Contact-label {
+    margin: 0 0 .75rem;
+    color: #F5A97F;
+    font-weight: 700;
+}
+
+.Contact h2 {
+    color: #e4e9ff;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.Contact-heading p:last-child {
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.Contact-form {
+    border: 1px solid rgba(202, 211, 245, .16);
+    background-color: rgba(54, 58, 79, .6);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.Contact-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.Contact label {
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+    color: #e4e9ff;
+}
+
+.Contact input,
+.Contact textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(202, 211, 245, .18);
+    border-radius: 8px;
+    background-color: #24273A;
+    color: #e4e9ff;
+    padding: .8rem .9rem;
+    outline: none;
+}
+
+.Contact input:focus,
+.Contact textarea:focus {
+    border-color: rgba(245, 169, 127, .75);
+}
+
+.Contact textarea {
+    resize: vertical;
+    min-height: 10rem;
+}
+
+.Contact-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.Contact button {
+    border: 1px solid rgba(245, 169, 127, .55);
+    border-radius: 8px;
+    background-color: #F5A97F;
+    color: #24273A;
+    padding: .8rem 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.Contact button:disabled {
+    cursor: default;
+    opacity: .7;
+}
+
+.Contact-status {
+    margin: 0;
+}
+
+.Contact-status-success {
+    color: #A6DA95;
+}
+
+.Contact-status-error {
+    color: #ED8796;
+}
+
+@media (max-width: 800px) {
+    .Contact {
+        width: min(100% - 2rem, 72rem);
+        grid-template-columns: 1fr;
+        margin-top: 4rem;
+    }
+
+    .Contact-row {
+        grid-template-columns: 1fr;
+    }
+}

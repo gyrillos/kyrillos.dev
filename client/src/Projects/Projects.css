@@ -1,0 +1,56 @@
+.Projects {
+    min-height: 100vh;
+    background-color: #24273A;
+}
+
+.Projects-content {
+    width: min(72rem, calc(100% - 4rem));
+    margin: 4rem auto 0;
+    color: #CAD3F5;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.Projects-heading {
+    max-width: 46rem;
+}
+
+.Projects-label {
+    margin: 0 0 .75rem;
+    color: #F5A97F;
+    font-weight: 700;
+}
+
+.Projects-heading h1 {
+    margin: 0;
+    color: #e4e9ff;
+    font-size: 2.5rem;
+}
+
+.Projects-heading p:last-child {
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.Projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.Projects-status {
+    margin: 2rem 0 0;
+    color: #CAD3F5;
+}
+
+@media (max-width: 700px) {
+    .Projects-content {
+        width: min(100% - 2rem, 72rem);
+        margin-top: 3rem;
+    }
+
+    .Projects-heading h1 {
+        font-size: 2rem;
+    }
+}
