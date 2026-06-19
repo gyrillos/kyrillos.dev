@@ -20,8 +20,8 @@ public class Github {
 	@Column(name="name")
 	private String name;
 	
-	@Column(name="discription")
-	private String discritpion;
+	@Column(name="description", columnDefinition="LONGTEXT")
+	private String descritpion;
 	
 	@Column(name="tech_stack")
 	private List<String> techStack;
@@ -31,11 +31,11 @@ public class Github {
 	
 	public Github() {}
 
-	public Github(int id, String name, String discritpion, List<String> techStack, List<String> commits) {
+	public Github(int id, String name, String descritpion, List<String> techStack, List<String> commits) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.discritpion = discritpion;
+		this.descritpion = descritpion;
 		this.techStack = techStack;
 		this.commits = commits;
 	}
@@ -60,12 +60,12 @@ public class Github {
 		this.name = name;
 	}
 
-	public String getDiscritpion() {
-		return discritpion;
+	public String getDescritpion() {
+		return descritpion;
 	}
 
-	public void setDiscritpion(String discritpion) {
-		this.discritpion = discritpion;
+	public void setDescritpion(String descritpion) {
+		this.descritpion = descritpion;
 	}
 
 	public List<String> getTechStack() {

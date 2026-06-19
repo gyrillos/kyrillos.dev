@@ -1,7 +1,7 @@
 import "./Project_Card.css"
 // add project card for each project will most likey need to use props
 function Project_Card({ project, featured = false }) {
-    const description = project?.discritpion || project?.description || "A software project from my GitHub portfolio.";
+    const description = project?.descritpion;
     const techStack = Array.isArray(project?.techStack) ? project.techStack : [];
     const latestCommit = Array.isArray(project?.commits) ? project.commits[0] : "";
     const commitMessage = latestCommit ? latestCommit.split("|")[0].trim() : "";

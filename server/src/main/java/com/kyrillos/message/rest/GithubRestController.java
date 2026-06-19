@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +23,7 @@ import com.kyrillos.message.service.GithubService;
 
 import tools.jackson.databind.json.JsonMapper;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/github")
 public class GithubRestController {
@@ -89,7 +93,7 @@ public class GithubRestController {
             }
 
             github.setName(name);
-            github.setDiscritpion(description);
+            github.setDescritpion(description);
             github.setTechStack(techStack);
             github.setCommits(commits);
 
@@ -171,6 +175,7 @@ public class GithubRestController {
 	            
 	            if (message != null && date != null) {
 	                commitMessages.add(message + " | " + date);
+	                System.out.println(message + " | " + date);
 	            }
 	        }
 	    }

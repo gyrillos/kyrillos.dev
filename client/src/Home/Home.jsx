@@ -4,8 +4,14 @@ import Welcome from "../Welcome/Welcome";
 import Featured from "../Featured/Featured";
 import Contact from "../Contact/Contact";
 import Commits from "../Commits/Commits";
+import {useEffect} from "react";
 
 function Home() {
+    useEffect(() => {
+        fetch("http://localhost:8080/api/github/loadgit", {
+            method: "POST"
+        }); 
+    }, []);
     return (
         <div className="home">
             <Navbar></Navbar>

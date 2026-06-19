@@ -12,7 +12,9 @@ function Projects() {
 
         async function loadProjects() {
             try {
-                const response = await fetch("/api/github/projects");
+                const response = await fetch("http://localhost:8080/api/github/projects", {
+                    "method": "GET"
+                });
                 if (!response.ok) {
                     throw new Error("Unable to load projects");
                 }
@@ -42,10 +44,6 @@ function Projects() {
             <main className="Projects-content">
                 <div className="Projects-heading">
                     <p className="Projects-label">Projects</p>
-                    <h1>Recent GitHub work</h1>
-                    <p>
-                        These are pulled from the server-side GitHub integration, including each project's language stack and recent commit context.
-                    </p>
                 </div>
 
                 {status === "loading" && <p className="Projects-status">Loading projects...</p>}

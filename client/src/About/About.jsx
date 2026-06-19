@@ -12,7 +12,6 @@ function About() {
                 <section className="about-intro">
                     <div className="about-copy">
                         <p className="about-label">About Me</p>
-                        <h1>Software engineer focused on useful, practical systems.</h1>
                         <div className="about-text">
                             <p>
                                 Hi, my name is Kyrillos Abdelshaheed. I'm a software engineer from Suffolk, VA and a Christopher Newport University graduate.

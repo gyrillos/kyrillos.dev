@@ -4,13 +4,15 @@ import Project_Card from "../Project_Card/Project_Card";
 
 function Featured() {
     const [project, setProject] = useState(null);
+    const [project1, setProject1] = useState(null);
+    const [project2, setProject2] = useState(null);
 
     useEffect(() => {
         let ignore = false;
 
         async function loadFeaturedProject() {
             try {
-                const response = await fetch("/api/github/projects");
+                const response = await fetch("http://localhost:8080/api/github/projects");
                 if (!response.ok) {
                     return;
                 }
@@ -18,9 +20,13 @@ function Featured() {
                 const data = await response.json();
                 if (!ignore && Array.isArray(data) && data.length > 0) {
                     setProject(data[0]);
+                    setProject1(data[1]);
+                    setProject2(data[2]);
                 }
             } catch {
                 setProject(null);
+                setProject1(null);
+                setProject2(null);
             }
         }
 
@@ -35,14 +41,14 @@ function Featured() {
         <section className="Featured">
             <div className="Featured-copy">
                 <p className="Featured-label">Featured Work</p>
-                <h2 className="Featured-title">Building practical software with real-world impact.</h2>
-                <p className="Featured-text">
-                    I focus on full stack tools that automate long workflows, make data easier to use, and give small teams cleaner ways to get work done.
-                </p>
             </div>
 
-            {project ? (
-                <Project_Card project={project} featured />
+            {project? (
+                <div classname="featuredProjects">
+                    <Project_Card project={project} featured />
+                    <Project_Card project={project1} featured />
+                    <Project_Card project={project2} featured />
+                </div>
             ) : (
                 <div className="Featured-placeholder">
                     <h3>AI Full Stack Application</h3>
