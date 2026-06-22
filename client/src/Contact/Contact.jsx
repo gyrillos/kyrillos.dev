@@ -48,8 +48,6 @@ function Contact() {
         <section className="Contact">
             <div className="Contact-heading">
                 <p className="Contact-label">Contact</p>
-                <h2>Send me a message</h2>
-                <p>Have a role, project, or idea in mind? Send it here and it will go straight through the site API.</p>
             </div>
 
             <form className="Contact-form" onSubmit={sendMessage}>

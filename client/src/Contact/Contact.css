@@ -1,11 +1,12 @@
 .Contact {
     width: min(72rem, calc(100% - 4rem));
     margin: 6rem auto 0;
-    display: grid;
+    display: flex;
     grid-template-columns: minmax(0, .85fr) minmax(20rem, 1.15fr);
     gap: 2rem;
     color: #CAD3F5;
     font-family: "Space Grotesk", sans-serif;
+    flex-direction: column;
 }
 
 .Contact-heading {

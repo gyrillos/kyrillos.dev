@@ -1,7 +1,6 @@
 .Featured {
     width: min(72rem, calc(100% - 4rem));
     margin: 6rem auto 0;
-    display: grid;
     grid-template-columns: minmax(0, .8fr) minmax(18rem, 1.2fr);
     gap: 2rem;
     align-items: stretch;
@@ -66,6 +65,9 @@
     }
 }
 .featuredProjects {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-bottom: 4rem;
 }

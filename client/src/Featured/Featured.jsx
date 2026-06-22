@@ -44,7 +44,7 @@ function Featured() {
             </div>
 
             {project? (
-                <div classname="featuredProjects">
+                <div className="featuredProjects">
                     <Project_Card project={project} featured />
                     <Project_Card project={project1} featured />
                     <Project_Card project={project2} featured />
