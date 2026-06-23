@@ -25,7 +25,7 @@ function Contact() {
         setStatus({ type: "sending", message: "Sending..." });
 
         try {
-            const response = await fetch("/api/messages", {
+            const response = await fetch("https://portfolio-api.kyrillos.dev/api/messages", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

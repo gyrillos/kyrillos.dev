@@ -12,7 +12,7 @@ function Featured() {
 
         async function loadFeaturedProject() {
             try {
-                const response = await fetch("http://localhost:8080/api/github/projects");
+                const response = await fetch("https://portfolio-api.kyrillos.dev/api/github/projects");
                 if (!response.ok) {
                     return;
                 }

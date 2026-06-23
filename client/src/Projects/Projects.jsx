@@ -12,7 +12,7 @@ function Projects() {
 
         async function loadProjects() {
             try {
-                const response = await fetch("http://localhost:8080/api/github/projects", {
+                const response = await fetch("https://portfolio-api.kyrillos.dev/api/github/projects", {
                     "method": "GET"
                 });
                 if (!response.ok) {

@@ -8,7 +8,7 @@ import {useEffect} from "react";
 
 function Home() {
     useEffect(() => {
-        fetch("http://localhost:8080/api/github/loadgit", {
+        fetch("https://portfolio-api.kyrillos.dev/api/github/loadgit", {
             method: "POST"
         }); 
     }, []);
