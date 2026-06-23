@@ -26,7 +26,7 @@ import com.kyrillos.message.service.GithubService;
 
 import tools.jackson.databind.json.JsonMapper;
 
-@CrossOrigin(origins = {"http://localhost:5173", "https://kyrillos.dev"})
+@CrossOrigin(origins = {"http://localhost:5173", "https://kyrillos.dev", "https://www.kyrillos.dev"})
 @RestController
 @RequestMapping("/api/github")
 public class GithubRestController {
