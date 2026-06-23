@@ -10,7 +10,7 @@ function Commits() {
 
         async function loadCommits() {
             try {
-                const response = await fetch("/api/github/projects");
+                const response = await fetch("https://portfolio-api.kyrillos.dev/api/github/projects");
                 if (!response.ok) {
                     throw new Error("Unable to load commits");
                 }
