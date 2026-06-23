@@ -9,4 +9,10 @@ export default defineConfig({
       '/api': 'http://localhost:8080',
     },
   },
+  preview: {
+      allowedHosts: [
+        "kyrillos.dev",
+        "www.kyrillos.dev"
+      ]
+    }
 })
