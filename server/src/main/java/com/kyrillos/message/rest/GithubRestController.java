@@ -1,6 +1,8 @@
 package com.kyrillos.message.rest;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import com.kyrillos.message.entity.Github;
@@ -196,15 +199,29 @@ public class GithubRestController {
 	    HttpEntity<Void> buildRequest = new HttpEntity<>(headers);
 
 	    String url = "https://api.github.com/repos/" +fullName + "/readme";
+	    try {
+		    ResponseEntity<Map> response = restTemplate.exchange(
+		            url,
+		            HttpMethod.GET,
+		            buildRequest,
+		            Map.class
+		    );
+		    
+		    Map<String, Object> body = response.getBody();
+		    
+		    if (body == null || body.get("content") == null) {
+	            return null;
+	        }
 
-	    ResponseEntity<String> response = restTemplate.exchange(
-	            url,
-	            HttpMethod.GET,
-	            buildRequest,
-	            String.class
-	    );
-	    
-	    return response.getBody();
+	        String encodedContent = body.get("content").toString();
+
+	        byte[] decodedBytes = Base64.getMimeDecoder().decode(encodedContent);
+
+	        return new String(decodedBytes, StandardCharsets.UTF_8);
+		    
+	    } catch (HttpClientErrorException.NotFound e) {
+	    	return null;
+	    }
 	}
 	
 	
