@@ -2,6 +2,7 @@ package com.kyrillos.message.rest;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kyrillos.message.entity.Message;
 import com.kyrillos.message.service.MessageService;
 
+@CrossOrigin(origins = {"http://localhost:5173", "https://kyrillos.dev", "https://www.kyrillos.dev"})
 @RestController
 @RequestMapping("/api")
 public class MessageRestController {
