@@ -75,7 +75,6 @@ function Commits() {
         <section className="Commits">
             <div className="Commits-heading">
                 <p className="Commits-label">Latest Commits</p>
-                <h2>Recent build activity</h2>
             </div>
 
             {status === "loading" && <p className="Commits-status">Loading recent commits...</p>}

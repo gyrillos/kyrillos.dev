@@ -81,6 +81,7 @@ public class GithubRestController {
 
             List<String> techStack = getLanguages(fullName);
             List<String> commits = getGithubCommits(fullName);
+            String readme = getReadme(fullName);
 
             Github existingProject = githubservice.findByName(name);
 
@@ -96,6 +97,7 @@ public class GithubRestController {
             github.setDescritpion(description);
             github.setTechStack(techStack);
             github.setCommits(commits);
+            github.setReadme(readme);
 
             githubservice.save(github);
         }
@@ -181,6 +183,28 @@ public class GithubRestController {
 	    }
 
 	    return commitMessages;
+	}
+	
+	private String getReadme(String fullName) {
+		HttpHeaders headers = new HttpHeaders();
+
+	    headers.set("Accept", "application/vnd.github+json");
+	    headers.set("X-GitHub-Api-Version", "2022-11-28");
+
+	    headers.setBearerAuth(githubToken.trim());
+
+	    HttpEntity<Void> buildRequest = new HttpEntity<>(headers);
+
+	    String url = "https://api.github.com/repos/" +fullName + "/readme";
+
+	    ResponseEntity<String> response = restTemplate.exchange(
+	            url,
+	            HttpMethod.GET,
+	            buildRequest,
+	            String.class
+	    );
+	    
+	    return response.getBody();
 	}
 	
 	

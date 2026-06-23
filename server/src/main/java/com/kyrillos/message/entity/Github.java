@@ -29,15 +29,27 @@ public class Github {
 	@Column(name="commits")
 	private List<String> commits;
 	
+	@Column(name="readme", columnDefinition="LONGTEXT")
+	private String readme;
+	
 	public Github() {}
 
-	public Github(int id, String name, String descritpion, List<String> techStack, List<String> commits) {
+	public Github(int id, String name, String descritpion, List<String> techStack, List<String> commits, String readme) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.descritpion = descritpion;
 		this.techStack = techStack;
 		this.commits = commits;
+		this.readme = readme;
+	}
+
+	public String getReadme() {
+		return readme;
+	}
+
+	public void setReadme(String readme) {
+		this.readme = readme;
 	}
 
 	public int getId() {
